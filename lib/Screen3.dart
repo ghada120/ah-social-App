@@ -8,6 +8,7 @@ class Screen3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+          backgroundColor:Colors.yellow[400],
       body: SafeArea(
         child:Screen3Page(),
       ),
@@ -30,13 +31,14 @@ class _Screen3PageState extends State<Screen3Page> {
         children: <Widget>[
           CircleAvatar(
             radius: 180,
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.white,
           ),
           SizedBox(height: 40),
           Text(
             "Start",
             style: TextStyle(
-              color: Colors.black,
+              fontFamily:'Langar',
+              color: Colors.yellow[900],
               fontSize: 18,
               fontWeight: FontWeight.normal,
             ),
@@ -45,17 +47,19 @@ class _Screen3PageState extends State<Screen3Page> {
           Text(
             "Start now and share your ideas and message with everyone",
             style: TextStyle(
-              color: Colors.grey,
+              fontFamily:'Langar',
+              color: Colors.yellow[900],
               fontSize: 15,
               fontWeight: FontWeight.normal,
             ),
           ),
           SizedBox(height: 40),
           RaisedButton(
-            color: Colors.black,
+            color: Colors.yellow[900],
             child: Text(
-              "Start  >",
+              "Start  ",
               style: TextStyle(
+                fontFamily:'Langar',
                 color: Colors.white,
               ),
             ),

@@ -23,7 +23,7 @@ class StartState extends State<SplashScreen> {
   }
 
   startTimer() async {
-    var duration = Duration(seconds: 5);
+    var duration = Duration(seconds: 10);
     return new Timer(duration, route);
   }
 
@@ -37,11 +37,12 @@ class StartState extends State<SplashScreen> {
   initScreen(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.white,
+        backgroundColor:Colors.yellow[400],
       body: Center(
         child: CircleAvatar(
           radius: 250,
-          backgroundColor: Colors.cyan,
+          backgroundImage: AssetImage('Image/5.jpg'),
+          backgroundColor: Colors.white,
         ),
       )
     );

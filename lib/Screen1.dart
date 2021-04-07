@@ -7,6 +7,7 @@ class Screen1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor:Colors.yellow[400],
       body: SafeArea(
         child:Screen1Page(),
       ),
@@ -30,13 +31,14 @@ class _Screen1PageState extends State<Screen1Page> {
           CircleAvatar(
             radius: 180,
 
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.white,
           ),
           SizedBox(height: 40),
           Text(
             "Register",
             style: TextStyle(
-              color: Colors.black,
+              fontFamily:'Langar',
+              color: Colors.yellow[900],
               fontSize: 18,
               fontWeight: FontWeight.normal,
             ),
@@ -45,19 +47,21 @@ class _Screen1PageState extends State<Screen1Page> {
           Text(
             "Register now and connect with your friends",
             style: TextStyle(
-              color: Colors.grey,
+              fontFamily:'Langar',
+              color: Colors.yellow[900],
               fontSize: 16,
               fontWeight: FontWeight.normal,
             ),
           ),
           SizedBox(height: 40),
           RaisedButton(
-            color: Colors.black,
+            color: Colors.yellow[800],
             onPressed: () =>_jump(context),
             child: Text(
               'Register',
               style: TextStyle(
-                fontSize: 16,
+                fontFamily:'Langar',
+                fontSize: 18,
                 color: Colors.white,
               ),
             ),

@@ -6,6 +6,7 @@ class Screen2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor:Colors.yellow[400],
       body: SafeArea(
         child:Screen2Page(),
       ),
@@ -28,13 +29,14 @@ class _Screen2PageState extends State<Screen2Page> {
         children: <Widget>[
           CircleAvatar(
             radius: 180,
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.white,
           ),
           SizedBox(height: 40),
           Text(
             "Connect",
             style: TextStyle(
-              color: Colors.black,
+              fontFamily:'Langar',
+              color: Colors.yellow[900],
               fontSize: 18,
               fontWeight: FontWeight.normal,
             ),
@@ -43,18 +45,20 @@ class _Screen2PageState extends State<Screen2Page> {
           Text(
             "Connect with the world and your friends wherever they are",
             style: TextStyle(
-              color: Colors.grey,
-              fontSize: 15,
+              fontFamily:'Langar',
+              color: Colors.yellow[900],
+              fontSize: 14,
               fontWeight: FontWeight.normal,
             ),
           ),
           SizedBox(height: 40),
           RaisedButton(
-            color: Colors.black,
+            color: Colors.yellow[800],
             child: Text(
-              "Next>",
+              "Next",
               style: TextStyle(
-                fontSize:16,
+                fontFamily:'Langar',
+                fontSize:18,
                 color: Colors.white,
               ),
             ),
