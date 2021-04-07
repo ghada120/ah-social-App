@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gpst_app/Login.dart';
-//import 'main.dart';
+
 class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+          backgroundColor:Colors.yellow[400],
         body: SafeArea(
           child: SignUpPage(),
         ),
@@ -20,12 +21,12 @@ class SignUpPage extends StatefulWidget {
 }
 enum AuthMode {SignUp}
 class _SignUpPageState extends State<SignUpPage> {
-  final GlobalKey<FormState>_formkey =GlobalKey();
-  final GlobalKey<FormState>_Formkey =GlobalKey();
-  final GlobalKey<FormState>_fOrmkey =GlobalKey();
-  final GlobalKey<FormState>_foRmkey =GlobalKey();
-  final GlobalKey<FormState>_forMkey =GlobalKey();
-  final GlobalKey<FormState>_formkEy =GlobalKey();
+  final GlobalKey<FormState>_EmailSignupTextField =GlobalKey();
+  final GlobalKey<FormState>_PasswordSignupTextfield =GlobalKey();
+  final GlobalKey<FormState>_ConfirmPasswordSignupTextfield =GlobalKey();
+  final GlobalKey<FormState>_NameSignupTextfield =GlobalKey();
+  final GlobalKey<FormState>_AddressSignupTextfield =GlobalKey();
+  final GlobalKey<FormState>_AgeSignupTextfield =GlobalKey();
   Map<String, String>_authData ={
     'email':'',
     'password':'',
@@ -47,7 +48,8 @@ class _SignUpPageState extends State<SignUpPage> {
               Text(
                 "  Sign Up",
                 style: TextStyle(
-                  color: Colors.black,
+                  fontFamily:'Langar',
+                  color: Colors.yellow[900],
                   fontSize: 30,
                   fontWeight: FontWeight.normal,
                 ),
@@ -61,7 +63,8 @@ class _SignUpPageState extends State<SignUpPage> {
               Text(
                 "     Email",
                 style: TextStyle(
-                  color: Colors.grey,
+                  fontFamily:'Langar',
+                  color: Colors.yellow[900],
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
                 ),
@@ -69,7 +72,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
           Form(
-            key: _formkey,
+            key: _EmailSignupTextField,
             child: Card(
               margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 25),
               child: TextFormField(
@@ -98,7 +101,8 @@ class _SignUpPageState extends State<SignUpPage> {
               Text(
                 "     Password",
                 style: TextStyle(
-                  color: Colors.grey,
+                  fontFamily:'Langar',
+                  color: Colors.yellow[900],
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
                 ),
@@ -106,7 +110,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
           Form(
-            key: _Formkey,
+            key: _PasswordSignupTextfield,
             child: Card(
               margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 25),
               child: TextFormField(
@@ -144,7 +148,8 @@ class _SignUpPageState extends State<SignUpPage> {
               Text(
                 "     Confirm Password",
                 style: TextStyle(
-                  color: Colors.grey,
+                  fontFamily:'Langar',
+                  color: Colors.yellow[900],
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
                 ),
@@ -152,7 +157,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
           Form(
-            key: _fOrmkey,
+            key: _ConfirmPasswordSignupTextfield,
             child: Card(
               margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 25),
               child: TextFormField(
@@ -189,7 +194,8 @@ class _SignUpPageState extends State<SignUpPage> {
               Text(
                 "     Name",
                 style: TextStyle(
-                  color: Colors.grey,
+                  fontFamily:'Langar',
+                  color: Colors.yellow[900],
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
                 ),
@@ -197,7 +203,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
           Form(
-            key: _foRmkey,
+            key: _NameSignupTextfield,
             child: Card(
               margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 25),
               child: TextFormField(
@@ -226,7 +232,8 @@ class _SignUpPageState extends State<SignUpPage> {
               Text(
                 "     Address",
                 style: TextStyle(
-                  color: Colors.grey,
+                  fontFamily:'Langar',
+                  color: Colors.yellow[900],
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
                 ),
@@ -234,7 +241,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
           Form(
-            key: _forMkey,
+            key: _AddressSignupTextfield,
             child: Card(
               margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 25),
               child: TextFormField(
@@ -263,7 +270,8 @@ class _SignUpPageState extends State<SignUpPage> {
               Text(
                 "     Age",
                 style: TextStyle(
-                  color: Colors.grey,
+                  fontFamily:'Langar',
+                  color: Colors.yellow[900],
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
                 ),
@@ -271,12 +279,11 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
           Form(
-            key: _formkEy,
+            key: _AgeSignupTextfield,
             child: Card(
               margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
-
                   hintText: "    Your Age",
                     contentPadding: const EdgeInsets.all(20),
                 ),
@@ -296,11 +303,13 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           SizedBox(height:20 ),
           RaisedButton(
-            color: Colors.black,
+            color: Colors.yellow[900],
             child: Text(
               "Sign Up",
               style: TextStyle(
+                fontFamily:'Langar',
                 color: Colors.white,
+                fontSize: 18,
               ),
             ),
             onPressed: _submit,
@@ -317,7 +326,8 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: Text(
                   "I already have an account",
                   style: TextStyle(
-                    color: Colors.black,
+                    fontFamily:'Langar',
+                    color: Colors.yellow[900],
                     decoration: TextDecoration.underline,
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
@@ -332,30 +342,30 @@ class _SignUpPageState extends State<SignUpPage> {
   }
   //TODO:TRY TO MINIMIZE
   void _submit(){
-    if(!_formkey.currentState.validate()) {
+    if(!_EmailSignupTextField.currentState.validate()) {
       return; //invalid
     };
-    if(!_Formkey.currentState.validate()){
+    if(!_PasswordSignupTextfield.currentState.validate()){
       return;
     };
-    if(!_fOrmkey.currentState.validate()) {
+    if(!_ConfirmPasswordSignupTextfield.currentState.validate()) {
       return; //invalid
     };
-    if(!_foRmkey.currentState.validate()) {
+    if(!_NameSignupTextfield.currentState.validate()) {
       return; //invalid
     };
-    if(!_forMkey.currentState.validate()) {
+    if(!_AddressSignupTextfield.currentState.validate()) {
       return; //invalid
     };
-    if(!_formkEy.currentState.validate()) {
+    if(!_AgeSignupTextfield.currentState.validate()) {
       return; //invalid
     };
-    _formkey.currentState.save();
-    _Formkey.currentState.save();
-    _fOrmkey.currentState.save();
-    _foRmkey.currentState.save();
-    _forMkey.currentState.save();
-    _formkEy.currentState.save();
+    _EmailSignupTextField.currentState.save();
+    _PasswordSignupTextfield.currentState.save();
+    _ConfirmPasswordSignupTextfield.currentState.save();
+    _NameSignupTextfield.currentState.save();
+    _AddressSignupTextfield.currentState.save();
+    _AgeSignupTextfield.currentState.save();
   }
   void _jump(BuildContext ctx) {
     Navigator.of(ctx).pushReplacement(
