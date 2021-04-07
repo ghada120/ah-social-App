@@ -7,6 +7,7 @@ class MyLogin extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+          backgroundColor:Colors.yellow[400],
         body:  SafeArea(
           child:MyHomePage(),
         ),
@@ -21,8 +22,8 @@ class MyHomePage extends StatefulWidget {
 }
 enum AuthMode {Login}
 class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<FormState>_formKey =GlobalKey();
-  final GlobalKey<FormState>_FormKey =GlobalKey();
+  final GlobalKey<FormState>_EmailLoginTextfield =GlobalKey();
+  final GlobalKey<FormState>_PasswordLoginTextfield =GlobalKey();
   AuthMode _authMode =AuthMode.Login;
   Map<String, String>_authData ={
     'email':'',
@@ -43,7 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(
                   "  Login",
                   style: TextStyle(
-                    color: Colors.black,
+                    fontFamily:'Langar',
+                    color: Colors.yellow[900],
                     fontSize: 30,
                     fontWeight: FontWeight.normal,
                   ),
@@ -56,7 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(
                   "     Email",
                   style: TextStyle(
-                    color: Colors.grey,
+                    fontFamily:'Langar',
+                    color: Colors.yellow[900],
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -64,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Form(
-              key: _formKey,
+              key: _EmailLoginTextfield,
               child: Card(
                 margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 25),
                 child: TextFormField(
@@ -93,7 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(
                   "     Password",
                   style: TextStyle(
-                    color: Colors.grey,
+                    fontFamily:'Langar',
+                    color: Colors.yellow[900],
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -101,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Form(
-              key: _FormKey,
+              key: _PasswordLoginTextfield,
               child: Card(
                 margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 25),
                 child: TextFormField(
@@ -134,10 +138,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 20),
             RaisedButton(
-              color: Colors.black,
+              color: Colors.yellow[900],
               child: Text(
                 "Login",
                 style: TextStyle(
+                  fontFamily:'Langar',
+                  fontSize: 18,
                   color: Colors.white,
                 ),
               ),
@@ -154,7 +160,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(
                   "        Don't have an account?",
                   style: TextStyle(
-                    color: Colors.black,
+                    fontFamily:'Langar',
+                    color: Colors.yellow[900],
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
                   ),
@@ -164,7 +171,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     "Sign Up now!",
                     style: TextStyle(
-                      color: Colors.black,
+                      fontFamily:'Langar',
+                      color: Colors.yellow[900],
                       decoration: TextDecoration.underline,
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
@@ -180,14 +188,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 //TODO:TRY TO MINIMIZE
   void _submit() {
-    if(!_formKey.currentState.validate()) {
+    if(!_EmailLoginTextfield.currentState.validate()) {
       return; //invalid
     };
-    if(!_FormKey.currentState.validate()){
+    if(!_PasswordLoginTextfield.currentState.validate()){
       return;
     };
-    _formKey.currentState.save();
-    _FormKey.currentState.save();
+    _EmailLoginTextfield.currentState.save();
+    _PasswordLoginTextfield.currentState.save();
   }
 
   void _jump(BuildContext ctx) {
