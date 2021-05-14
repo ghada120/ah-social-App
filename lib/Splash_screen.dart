@@ -1,50 +1,26 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:gpst_app/Screen1.dart';
 
-
-class SplashScreen extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => StartState();
-}
-
-class StartState extends State<SplashScreen> {
+class MySplashScreen extends StatelessWidget {
+  double screenHeight, screenWidth;
   @override
   Widget build(BuildContext context) {
-    return initScreen(context);
-  }
-
-
-  @override
-  void initState() {
-    super.initState();
-    startTimer();
-  }
-
-  startTimer() async {
-    var duration = Duration(seconds: 10);
-    return new Timer(duration, route);
-  }
-
-  route() {
-    Navigator.pushReplacement(context, MaterialPageRoute(
-        builder: (context) => Screen1()
-    )
-    );
-  }
-
-  initScreen(BuildContext context) {
-
+    screenHeight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    screenWidth = MediaQuery.of(context).size.width;
+    Future.delayed(Duration(seconds: 6)).then((value) {
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (context) => Screen1()),
+          (Route<dynamic> route) => false);
+    });
     return Scaffold(
-        backgroundColor:Colors.yellow[400],
+      backgroundColor: Color.fromRGBO(255, 255, 255, 1),
       body: Center(
         child: CircleAvatar(
-          radius: 250,
-          backgroundImage: AssetImage('Image/5.jpg'),
-          backgroundColor: Colors.white,
+          backgroundImage: AssetImage("Image/Screen3.jpg"),
+          radius: screenWidth * 0.667,
         ),
-      )
+      ),
     );
   }
 }
